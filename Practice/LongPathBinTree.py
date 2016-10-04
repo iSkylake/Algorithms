@@ -11,16 +11,20 @@ class Binary_Tree:
 
 def long_path(root):
 	count = 0
+	max = 0
 	def _long_path(node, count):
+		nonlocal max
 		if node == None:
-			print(count)
+			if count >= max:
+				max = count
 			return
 		count += 1
 		_long_path(node.left, count)
-		count -= 1
 		_long_path(node.right, count)
+		count -= 1
 
 	_long_path(root, count)
+	print(max)
 
 bin_tree = Binary_Tree()
 a = Node('a')
