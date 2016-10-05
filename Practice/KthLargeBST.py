@@ -9,27 +9,46 @@ class BST:
 		self.root = None
 		self.size = 0
 
+	# def insert(self, val):
+	# 	new_node = Node(val)
+	# 	if self.size < 1:
+	# 		self.root = new_node
+	# 		self.size += 1
+	# 	else:
+	# 		add = False
+	# 		node = self.root
+	# 		while not add:
+	# 			if val < node.val and not node.left:
+	# 				node.left = new_node
+	# 				self.size += 1
+	# 				add = True
+	# 			elif val > node.val and not node.right:
+	# 				node.right = new_node
+	# 				self.size += 1
+	# 				add = True
+	# 			elif val < node.val:
+	# 				node = node.left
+	# 			else:
+	# 				node = node.right
+
 	def insert(self, val):
 		new_node = Node(val)
-		if self.size < 1:
+		if not self.root:
 			self.root = new_node
-			self.size += 1
 		else:
-			add = False
-			node = self.root
-			while not add:
-				if val < node.val and not node.left:
-					node.left = new_node
-					self.size += 1
-					add = True
-				elif val > node.val and not node.right:
-					node.right = new_node
-					self.size += 1
-					add = True
-				elif val < node.val:
-					node = node.left
-				else:
-					node = node.right
+			self._insert(self.root, new_node)
+
+	def _insert(self, node, new_node):
+		if new_node.val < node.val:
+			if not node.left:
+				node.left = new_node
+			else:
+				self._insert(node.left, new_node)
+		else:
+			if not node.right:
+				node.right = new_node
+			else:
+				self._insert(node.right, new_node)
 
 def kth_large_BST(root, k):
 	count = 0
