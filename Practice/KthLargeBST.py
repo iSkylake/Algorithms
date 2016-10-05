@@ -19,22 +19,38 @@ class BST:
 	# 		while not found:
 	# 			if val < node.val:
 
+# def kth_large_BST(root, k):
+# 	count = 0
+# 	val = 0
+# 	def traverse(node, k):
+# 		nonlocal count, val
+# 		if not node:
+# 			return
+# 		traverse(node.right, k)
+# 		count += 1
+# 		if count == k:
+# 			val = node.val
+# 		traverse(node.left, k)
 
+# 	traverse(root, k)
+# 	return val
+
+#Using Array
 def kth_large_BST(root, k):
-	count = 0
-	val = 0
-	def traverse(node, k):
-		nonlocal count, val
+
+	inorder = []
+
+	def traverse(node):
+		nonlocal inorder
+		
 		if not node:
 			return
-		traverse(node.right, k)
-		count += 1
-		if count == k:
-			val = node.val
-		traverse(node.left, k)
+		traverse(node.right)
+		inorder.append(node.val)
+		traverse(node.left)
 
-	traverse(root, k)
-	return val
+	traverse(root)
+	return inorder[k-1]
 
 a = Node(5)
 b = Node(4)
