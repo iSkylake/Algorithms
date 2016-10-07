@@ -1,41 +1,38 @@
 def one_edit(str1, str2):
-	str_1_len = len(str1)
-	str_2_len = len(str2)
-
-	# Verify if there's more than 1 extra character
-	if str_1_len - str_2_len > 1 or str_1_len - str_2_len < -1:
+	if len(str1) - len(str2) > 1 or len(str2) - len(str1) > 1:
 		return False
 
-	edit = 0
-	# Looking for 1 character extra
-	if str_1_len > str_2_len or str_2_len > str_1_len:
-		edit += 1
+	i, j, edit = 0, 0, 0
 
-	i, j = 0, 0
-
-	while i < str_1_len and j < str_2_len:
-		print(edit)
-		print("%s %s"%(str1[i], str2[j]))
+	while i < len(str1)-1 or j < len(str2)-1:
 		if str1[i] != str2[j]:
 			edit += 1
-			if str_1_len < str_2_len:
-					j += 1
-			elif str_2_len < str_1_len:
-					i += 1
+			if str1[i+1] == str2[j] or str2[j+1] == str1[i]:
+				if len(str1) > len(str2):
+					if i < len(str1)-1:
+						i += 1
+				else:
+					if j < len(str2)-1:
+						j += 1
 			else:
+				if i < len(str1)-1:
 					i += 1
+				if j < len(str2)-1:
 					j += 1
 		else:
+			if i < len(str1)-1:
 				i += 1
+			if j < len(str2)-1:
 				j += 1
-		if edit > 1:
-			print(edit)
-			return False
 
-	if edit == 1:
-		return True
-	else:
+	if str1[i] != str2[j]:
+		edit += 1
+
+	if edit > 1:
 		return False
+	else:
+		return True
+
 
 
 print(one_edit('table', 'tablet'))
