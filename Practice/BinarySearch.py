@@ -11,5 +11,19 @@ def binary_search(arr, target):
 	else:
 		return False
 
+def binary_search(arr, target):
+	first = 0
+	last = len(arr) - 1
+	while first <= last:
+		mid = first + last
+		if arr[mid] == target:
+			return True
+		else:
+			if target < arr[mid]:
+				last = mid - 1
+			else:
+				first = mid + 1
+	return False
+
 print(binary_search([1, 2, 3, 4, 5, 6, 7, 8], 1))
 
