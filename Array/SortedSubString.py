@@ -1,20 +1,22 @@
 def sort_sub_string(arr):
-	left = 0
-	right = len(arr) - 1
-	minIndex = 0
-	maxIndex = len(arr)-1
-	while left < right :
-		if arr[left] > arr[left+1] and arr[left] >= arr[minIndex]:
-			sub_left = left
-			print(left)
-		else:
-			sub_left = minIndex
-		if arr[right] < arr[right-1] and arr[right] <= arr[maxIndex]:
-			sub_right = right
-			print(right)
-		else:
-			sub_right = maxIndex
-			print("WAHT!? ", right)
-		left += 1
-		right -= 1
-	return [sub_left, sub_right]
+	left, max_val = 0, arr[0]
+	right, min_val = len(arr) - 1, arr[len(arr) - 1]
+
+	for i in range(len(arr)):
+		if arr[i] > max_val:
+			max_val = arr[i]
+
+		if arr[i] < max_val:
+			right = i
+
+	for i in range(len(arr)-1, -1, -1):
+		if arr[i] < min_val:
+			min_val = arr[i]
+
+		if arr[i] > min_val:
+			left = i
+
+	return [left, right]
+
+# [3,4,8,7,10,6,17]
+# [3,4,8,7,20,6,17]

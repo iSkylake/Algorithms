@@ -25,3 +25,4 @@ def kth_large_in_array(arr, k):
 			last = arr.index(pivot) - 1
 
 print(kth_large_in_array([3, 1, 6, 4, 9, 8], 1))
+print(kth_large_in_array([1, 9, 5, 3], 5))
