@@ -1,3 +1,5 @@
+# Create a stack where you can track the minimun value
+
 class MinStack:
 	def __init__(self):
 		self.stack = []

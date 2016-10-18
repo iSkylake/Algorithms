@@ -1,3 +1,5 @@
+# Create a function that invert a Binary Tree
+
 class Node:
 	def __init__(self, val):
 		self.val = val

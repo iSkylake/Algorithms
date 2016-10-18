@@ -1,3 +1,5 @@
+# Create a function that return True if the Binary Tree is a BST or False if it isn't a BST
+
 class Node:
 	def __init__(self, val):
 		self.val = val

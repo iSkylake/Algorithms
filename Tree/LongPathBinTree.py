@@ -1,3 +1,5 @@
+# Create a function that returns the longest path in a Binarty Tree
+
 class Node:
 	def __init__(self, val):
 		self.val = val

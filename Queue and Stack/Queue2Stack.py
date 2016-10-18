@@ -1,3 +1,5 @@
+# Using two Stacks implement a Queue
+
 class Queue2Stack:
 	def __init__(self):
 		self.in_stack = []

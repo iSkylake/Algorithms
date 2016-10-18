@@ -1,3 +1,6 @@
+# Implementation of a Binary Search
+
+# Using recursion
 def binary_search(arr, target):
 	if len(arr) > 0:
 		mid = len(arr)//2
@@ -11,6 +14,7 @@ def binary_search(arr, target):
 	else:
 		return False
 
+# Using iteration
 def binary_search(arr, target):
 	first = 0
 	last = len(arr) - 1
