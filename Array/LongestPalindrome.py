@@ -51,3 +51,4 @@ def longestPalindrome(string):
 
 print(longestPalindrome("monkeybananacarsaibohphobialoool"))
 print(longestPalindrome("bananaAButTuba"))
+print(longestPalindrome("mydadlikestodriveracecars"))
