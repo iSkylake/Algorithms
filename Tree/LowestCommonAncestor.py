@@ -66,3 +66,18 @@ def lowest(root, first_value, second_value):
 			lowest_common_ancestor = second_search[i]
 
 	return lowest_common_ancestor
+
+a = Node(5)
+b = Node(2)
+c = Node(7)
+d = Node(4)
+e = Node(8)
+f = Node(9)
+
+a.left = b
+a.right = c
+c.left = d
+c.right = e
+e.right = f
+
+print(lowest(a, 4, 9))
