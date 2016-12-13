@@ -1,3 +1,5 @@
+from nose.tools import assert_equal
+
 def occurrence_in_string(string, sub_string):
 	occurrence = 0
 	# when to stop
@@ -15,6 +17,16 @@ def occurrence_in_string(string, sub_string):
 print(take_home("tewrwaBcfasaBCabcgadfasdAbcsfaSFD", "abc")) # output: 4
 print(take_home("abCrwaBcfasaBCabcgadfasdAbcsfaABc", "abc")) # output: 6
 print(take_home("zzzzzz", "zz")) # output: 5
+
+class Occurrence_in_String(object):
+	def test(self, func):
+		assert_equal(func("tewrwaBcfasaBCabcgadfasdAbcsfaSFD"), "abc")
+		assert_equal(func("abCrwaBcfasaBCabcgadfasdAbcsfaABc"), "abc")
+		assert_equal(func("zzzzzz"), "zz")
+		print("TEST PASSED")
+
+t = Occurrence_in_String()
+t.test(occurrence_in_string)
 
 # I know there's a count function in Python and it can solve this example string.lower().count(sub_string) but in other cases like "zzzzzz", "zzz" it will return 2 instead of 4
 
