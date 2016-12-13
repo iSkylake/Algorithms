@@ -14,15 +14,15 @@ def occurrence_in_string(string, sub_string):
 
 	return occurrence
 
-print(take_home("tewrwaBcfasaBCabcgadfasdAbcsfaSFD", "abc")) # output: 4
-print(take_home("abCrwaBcfasaBCabcgadfasdAbcsfaABc", "abc")) # output: 6
-print(take_home("zzzzzz", "zz")) # output: 5
+print(occurrence_in_string("tewrwaBcfasaBCabcgadfasdAbcsfaSFD", "abc")) # output: 4
+print(occurrence_in_string("abCrwaBcfasaBCabcgadfasdAbcsfaABc", "abc")) # output: 6
+print(occurrence_in_string("zzzzzz", "zz")) # output: 5
 
 class Occurrence_in_String(object):
 	def test(self, func):
-		assert_equal(func("tewrwaBcfasaBCabcgadfasdAbcsfaSFD"), "abc")
-		assert_equal(func("abCrwaBcfasaBCabcgadfasdAbcsfaABc"), "abc")
-		assert_equal(func("zzzzzz"), "zz")
+		assert_equal(func("tewrwaBcfasaBCabcgadfasdAbcsfaSFD", "abc"), 4)
+		assert_equal(func("abCrwaBcfasaBCabcgadfasdAbcsfaABc", "abc"), 6)
+		assert_equal(func("zzzzzz", "zz"), 5)
 		print("TEST PASSED")
 
 t = Occurrence_in_String()
