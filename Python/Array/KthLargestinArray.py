@@ -1,3 +1,5 @@
+from nose.tools import assert_equal
+
 def kth_large_in_array(arr, k):
 	if k > len(arr):
 		return False
@@ -26,3 +28,12 @@ def kth_large_in_array(arr, k):
 
 print(kth_large_in_array([3, 1, 6, 4, 9, 8], 1))
 print(kth_large_in_array([1, 9, 5, 3], 5))
+
+class Kth_Large_in_Array(object):
+	def test(self, func):
+		assert_equal(func([3, 1, 6, 4, 9, 8], 1), 9)
+		assert_equal(func([1, 9, 5, 3], 5), False)
+		print("TESTS PASSED")
+
+t = Consecutive_Sum()
+t.test(consecutive_sum)
