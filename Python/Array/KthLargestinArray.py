@@ -35,5 +35,5 @@ class Kth_Large_in_Array(object):
 		assert_equal(func([1, 9, 5, 3], 5), False)
 		print("TESTS PASSED")
 
-t = Consecutive_Sum()
-t.test(consecutive_sum)
+t = Kth_Large_in_Array()
+t.test(kth_large_in_array)
