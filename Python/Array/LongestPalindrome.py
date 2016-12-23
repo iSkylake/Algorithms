@@ -1,3 +1,5 @@
+from nose.tools import assert_equal
+
 # def longestPalindrome(n, s):
 	# max_lenght = 0
 
@@ -52,3 +54,13 @@ def longestPalindrome(string):
 print(longestPalindrome("monkeybananacarsaibohphobialoool"))
 print(longestPalindrome("bananaAButTuba"))
 print(longestPalindrome("mydadlikestodriveracecars"))
+
+class Longest_Palindrome(object):
+	def test(self, func):
+		assert_equal(func("monkeybananacarsaibohphobialoool"), 11)
+		assert_equal(func("bananaAButTuba"), 8)
+		assert_equal(func("mydadlikestodriveracecars"), 7)
+		print("TESTS PASSED")
+
+t = Longest_Palindrome()
+t.test(longestPalindrome)
