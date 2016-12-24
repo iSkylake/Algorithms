@@ -1,3 +1,5 @@
+from nose.tools import assert_equal
+
 def plus_one(arr):
 	index = len(arr) - 1
 	while index >= 0:
@@ -9,3 +11,13 @@ def plus_one(arr):
 			index -= 1
 	arr.insert(0, 1)
 	return arr
+
+class Plus_One(object):
+	def test(self, func):
+		assert_equal(func([1, 0, 0]), [1, 0, 1])
+		assert_equal(func([1, 0, 9]), [1, 1, 0])
+		assert_equal(func([9]), [1, 0])
+		print('TESTS PASSED')
+
+t = Plus_One()
+t.test(plus_one)
