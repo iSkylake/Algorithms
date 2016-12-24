@@ -1,3 +1,5 @@
+from nose.tools import assert_equal
+
 def one_edit(str1, str2):
 	if len(str1) - len(str2) > 1 or len(str2) - len(str1) > 1:
 		return False
@@ -38,3 +40,13 @@ def one_edit(str1, str2):
 print(one_edit('table', 'tablet'))
 print(one_edit('table', 'tale'))
 print(one_edit('table', 'cables'))
+
+class One_Edit(object):
+	def test(self, func):
+		assert_equal(func('table', 'tablet'), True)
+		assert_equal(func('table', 'tale'), True)
+		assert_equal(func('table', 'cables'), False)
+		print('TESTS PASSED')
+
+t = One_Edit()
+t.test(one_edit)
