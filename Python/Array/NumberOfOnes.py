@@ -5,7 +5,7 @@ def number_of_ones(arr):
 	last = len(arr) - 1
 	while first <= last:
 		mid = (last + first)//2
-		if arr[mid] == 1 and arr[mid-1] == 0:
+		if arr[mid] == 1 and arr[mid-1] == 0 or mid == 0 and arr[mid] == 1:
 			return len(arr) - mid
 		if arr[mid] == 0:
 			first = mid + 1
@@ -17,6 +17,8 @@ class Number_of_Ones(object):
 	def test(self, func):
 		assert_equal(func([0, 0, 0, 1, 1, 1]), 3)
 		assert_equal(func([0, 0, 0, 0, 0, 0, 0, 0]), 0)
+		assert_equal(func([1]), 1)
+		assert_equal(func([1, 1, 1]), 3)
 	print('TESTS PASSED')
 
 t = Number_of_Ones()
