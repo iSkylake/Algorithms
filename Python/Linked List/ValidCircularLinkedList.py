@@ -1,3 +1,5 @@
+from nose.tools import assert_equal
+
 class Node:
 	def __init__(self, value):
 		self.value = value
@@ -13,3 +15,27 @@ def valid_circular_LL(node):
 			return True
 	return False
 
+a = Node(1)
+b = Node(2)
+c = Node(3)
+
+a.next = b
+b.next = c
+c.next = a
+
+x = Node(1)
+y = Node(2)
+z = Node(3)
+
+x.next = y
+y.next = z
+
+
+class Valid_Circular:
+	def test(self, func):
+		assert_equal(func(a), True)
+		assert_equal(func(x), False)
+	print("TESTS PASSED")
+
+t = Valid_Circular()
+t.test(valid_circular_LL)
