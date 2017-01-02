@@ -1,3 +1,13 @@
+# Given an array of integers that represents an integer, add one to that number
+
+# Example:
+#	[1, 2, 3] => [1, 2, 4]
+#	[9] => [1, 0]
+
+# Suggestion: 
+#	Time: O(n)
+#	Space: O(1)
+
 from nose.tools import assert_equal
 
 def plus_one(arr):
