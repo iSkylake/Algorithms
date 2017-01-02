@@ -1,3 +1,12 @@
+# Given two sorted arrays, merge them into one sorted array
+
+# Example:
+#	[1, 2, 5, 7], [3, 4, 9] => [1, 2, 3, 4, 5, 7, 9]
+
+# Suggestion:
+#	Time: O(n+m)
+#	Space: O(n+m)
+
 from nose.tools import assert_equal
 
 def merge_2_array(arr1, arr2):
@@ -18,11 +27,6 @@ def merge_2_array(arr1, arr2):
 	while j < len(arr2):
 		result.append(arr2[j])
 		j += 1
-
-	# if i > j:
-	# 	result + arr1
-	# else:
-	# 	result + arr2
 
 	return result
 
