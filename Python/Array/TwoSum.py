@@ -1,3 +1,12 @@
+# Given an array of integer and a integer target, return the indices of the integers in the array that adding them is equal to the target
+
+# Example:
+#	[4, 6, 2, 10], 8 => [1, 2]
+
+# Suggestion:
+#	Time: O(n)
+#	Space: O(n)
+
 from nose.tools import assert_equal
 
 def two_sum(arr, target):
