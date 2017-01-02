@@ -1,7 +1,8 @@
-# Given an array of integer and a integer target, return the indices of the integers in the array that adding them is equal to the target
+# Given an array of integer and a integer target, return the indices of the integers in the array that adding them is equal to the target. If the target is not found, return [-1, -1]
 
 # Example:
 #	[4, 6, 2, 10], 8 => [1, 2]
+#	[1, 2, 3, 4], -1 => [-1, -1]
 
 # Suggestion:
 #	Time: O(n)
