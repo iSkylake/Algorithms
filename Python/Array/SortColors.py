@@ -1,3 +1,12 @@
+# Given an array of integer values of 0, 1 and 2 representing Red, Green, Blue, sort them in linear time.
+
+# Example:
+#	[2, 1, 0, 1, 0] => [0, 0, 1, 1, 2]
+
+# Suggestion:
+#	Time: O(n)
+#	Space: O(1)
+
 from nose.tools import assert_equal
 
 def sort_colors(arr):
