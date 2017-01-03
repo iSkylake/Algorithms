@@ -1,3 +1,13 @@
+# Given an array of integer and a number k, find the kth largest value in the array
+
+# Example:
+#	[3, 1, 6, 4, 9, 8], 3 => 6
+#	[1, 9, 5, 3], 1 => 9
+
+# Suggestion:
+# Time: O(n)
+# Space: O(log(n))
+
 from nose.tools import assert_equal
 
 def kth_large_in_array(arr, k):
