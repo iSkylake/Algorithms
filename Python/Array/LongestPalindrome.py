@@ -1,3 +1,12 @@
+# Given a string, determine the longest substring palindrome
+
+# Example:
+#	"OnlyBananaIsAlowed" => 5
+
+# Suggestion:
+# Time: O(n^2)
+# Space: O(n)
+
 from nose.tools import assert_equal
 
 # def longestPalindrome(n, s):
