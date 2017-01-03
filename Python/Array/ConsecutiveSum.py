@@ -1,3 +1,13 @@
+# Given an array of integers and a target, return true if there's a subarray of consecutive elements that sum up to the target value
+
+# Example:
+#	[6, 12, 1, 7, 5, 2, 3], 14 => True
+#	[7, 5, 1, 10], 30 => False
+
+# Suggestion:
+# Time: O(n)
+# Space: O(1)
+
 from nose.tools import assert_equal
 
 def consecutive_sum(arr, target):
