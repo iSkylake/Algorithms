@@ -1,3 +1,5 @@
+from nose.tools import assert_equal
+
 def missing_element(arr):
 	arr_sum = 0
 	min_val, max_val = arr[0], arr[0]
@@ -10,3 +12,12 @@ def missing_element(arr):
 
 	real_sum = (max_val*(max_val+1)//2) - (min_val-1)
 	return real_sum - arr_sum
+
+class Missing_Element(object):
+	def test(self, func):
+		assert_equal(func([1, 2, 3, 5, 6]), 4)
+		assert_equal(func([5, 1, 4, 3]), 2)
+		print('TESTS PASSED')
+
+t = Missing_Element()
+t.test(missing_element)
