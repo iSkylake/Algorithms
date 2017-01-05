@@ -1,3 +1,12 @@
+# Given an array of strings, return the index of the string with most vowels
+
+# Example:
+#	['example', 'aeoiu'] => 1
+
+# Suggestion:
+#	Time: O(mn)
+#	space: O(n)
+
 from nose.tools import assert_equal
 
 def most_vowel_array(array):
