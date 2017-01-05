@@ -1,3 +1,13 @@
+# Given an array of N integers in a range [1... (N+1)], find the missing element
+
+# Example:
+#	[1, 3, 4] => 2
+#	[8, 6, 7, 1, 2, 4, 3] => 5
+
+# Suggestion:
+# 	Time: O(n)
+#	Space: O(1)
+
 from nose.tools import assert_equal
 
 def missing_element(arr):
