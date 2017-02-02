@@ -2,12 +2,11 @@ from nose.tools import assert_equal
 
 def selectionSort(arr):
 	for i in range(len(arr)):
+		minIndex = i
 		for j in range(i+1, len(arr)):
-			minIndex = i
-			if arr[j] < arr[i]:
+			if arr[j] < arr[minIndex]:
 				minIndex = j
-			arr[i], arr[minIndex] = arr[minIndex], arr[i]
-			print(arr)
+		arr[i], arr[minIndex] = arr[minIndex], arr[i]
 	return arr
 
 class Selection_Sort(object):
