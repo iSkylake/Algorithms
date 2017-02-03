@@ -20,6 +20,19 @@ function fiboRec(n){
 	return fiboRec(n-1) + fiboRec(n-2);
 }
 
+var mem = {};
+
+function fiboMem(n){	
+	if(n <= 1){
+		return n;
+	}
+	if(n in mem){
+		return mem[n];
+	}
+	mem[n] = fiboMem(n-1) + fiboMem(n-2)
+	return mem[n];
+}
+
 console.log(fibonacci(6));
 console.log(fibonacci(1));
 console.log(fibonacci(30));
@@ -27,3 +40,7 @@ console.log(fibonacci(30));
 console.log(fiboRec(6));
 console.log(fiboRec(1));
 console.log(fiboRec(30));
+
+console.log(fiboMem(6));
+console.log(fiboMem(1));
+console.log(fiboMem(30));
