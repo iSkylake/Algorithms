@@ -13,6 +13,19 @@ function fibonacci(n){
 	return c;
 }
 
+function fiboRec(n){
+	if(n === 0){
+		return 0;
+	} else if(n === 1){
+		return 1;
+	} 
+	return fiboRec(n-1) + fiboRec(n-2);
+}
+
 console.log(fibonacci(6));
 console.log(fibonacci(1));
 console.log(fibonacci(30));
+
+console.log(fiboRec(6));
+console.log(fiboRec(1));
+console.log(fiboRec(30));
