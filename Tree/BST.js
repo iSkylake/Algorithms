@@ -15,17 +15,19 @@ BST.prototype.insert = function(value){
 		this.head = newNode;
 	} else{
 		var currentNode = this.head;
-		while(currentNode.left !== null && currentNode.right !== null){
+		var prevNode = null;
+		while(currentNode !== null && currentNode !== null){
+			prevNode = currentNode;
 			if(value < currentNode.value){
 				currentNode = currentNode.left;
 			} else{
 				currentNode = currentNode.right;
 			}
 		}
-		if(value < currentNode.value){
-			currentNode.left = newNode;
+		if(value < prevNode.value){
+			prevNode.left = newNode;
 		} else{
-			currentNode.right = newNode;
+			prevNode.right = newNode;
 		}
 	}
 	this.size++;
@@ -37,5 +39,3 @@ tree.insert(10);
 tree.insert(5);
 tree.insert(15);
 tree.insert(30);
-
-console.log(tree.head.left.left.value);
