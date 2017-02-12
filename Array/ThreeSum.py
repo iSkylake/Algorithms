@@ -1,3 +1,5 @@
+from nose.tools import assert_equal
+
 def threeSum(arr):
 	arr = sorted(arr)
 	l = len(arr)
@@ -13,3 +15,13 @@ def threeSum(arr):
 			else:
 				k -= 1
 	return False
+
+class ThreeSum(object):
+	def test(self, func):
+		assert_equal(func([9, 2, 1, 7, -5, -2, 8]), True)
+		assert_equal(func([5, 2, 1, 0, 4]), False)
+		assert_equal(func([5, 0, 6, 1, -6, 2]), True)
+		print("TESTS PASSED")
+
+t = ThreeSum()
+t.test(threeSum)
