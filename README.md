@@ -1,3 +1,3 @@
 # Algorithms
 
-Here are some algorithms that I'm practicing
+Scripting algorithms with Python and Javascript
