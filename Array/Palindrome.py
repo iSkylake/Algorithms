@@ -1,11 +1,11 @@
 def palindrome(s):
+	s = s.lower()
 	size = len(s)
 	mid = size//2
+	left = mid - 1
 	if size%2 == 0:
-		left = mid - 1
 		right = mid
 	else:
-		left = mid - 1
 		right = mid + 1
 
 	while left >= 0 and right < size:

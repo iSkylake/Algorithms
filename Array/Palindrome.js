@@ -1,4 +1,5 @@
 function palindrome(s){
+	s = s.toLowerCase();
 	var mid = Math.floor(s.length/2);
 	var left = mid - 1;
 	var right = 0;
@@ -18,5 +19,5 @@ function palindrome(s){
 }
 
 console.log(palindrome("palindrome"));
-console.log(palindrome("abccba"));
+console.log(palindrome("Abccba"));
 console.log(palindrome("abcba"));
