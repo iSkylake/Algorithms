@@ -1,3 +1,5 @@
+from nose.tools import assert_equal
+
 class Palindrome:
 	def __init__(self):
 		self.stack = []
@@ -29,6 +31,13 @@ class Palindrome:
 		return True
 
 pal = Palindrome()
-print(pal.check("Palindrome"))
-print(pal.check("aBccba"))
-print(pal.check("abcba"))
+
+class Palindrome_Test(object):
+	def test(self, func):
+		assert_equal(func("Palindrome"), False)
+		assert_equal(func("aBccba"), True)
+		assert_equal(func("abcba"), True)
+		print("TEST PASSED")
+
+t = Palindrome_Test()
+t.test(pal.check)
