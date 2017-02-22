@@ -1,3 +1,5 @@
+from nose.tools import assert_equal
+
 def palindrome(s):
 	s = s.lower()
 	size = len(s)
@@ -16,6 +18,12 @@ def palindrome(s):
 
 	return True
 
-print(palindrome("palindrome"))
-print(palindrome("abccba"))
-print(palindrome("abcba"))
+class Palindrome_Test(object):
+	def test(self, func):
+		assert_equal(func("Palindrome"), False)
+		assert_equal(func("AbcCba"), True)
+		assert_equal(func("abcba"), True)
+		print("TEST PASSED")
+
+t = Palindrome_Test()
+t.test(palindrome)
