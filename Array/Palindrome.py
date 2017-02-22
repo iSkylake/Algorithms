@@ -1,17 +1,3 @@
-# class Palindrome:
-# 	def __init__(self):
-# 		self.stack = []
-# 		self.queue = []
-
-# 	def check(self, s):
-# 		if len(s)%2 == 0:
-# 			return self.oddPalindrome(s)
-# 		else:
-# 			return self.evenPalindrome(s)
-
-# 	def oddPalindrome(s):
-# 		
-
 def palindrome(s):
 	size = len(s)
 	mid = size//2
