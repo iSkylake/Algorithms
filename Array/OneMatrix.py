@@ -1,8 +1,17 @@
-matrix = [
+from nose.tools import assert_equal
+
+matrix1 = [
 	[0, 0, 0, 1],
 	[0, 0, 1, 1],
 	[0, 1, 1, 1],
 	[0, 1, 1, 1]
+]
+
+matrix2 = [
+	[0, 0, 0, 1],
+	[0, 0, 1, 1],
+	[1, 1, 1, 1],
+	[1, 1, 1, 1]
 ]
 
 def oneMatrix(matrix):
@@ -23,4 +32,11 @@ def oneMatrix(matrix):
 
 	return count
 
-print(oneMatrix(matrix))
+class OneMatrixTest():
+	def test(self, func):
+		assert_equal(func(matrix1), 9)
+		assert_equal(func(matrix2), 11)
+		print('TESTS PASSED')
+
+t = OneMatrixTest()
+t.test(oneMatrix)
