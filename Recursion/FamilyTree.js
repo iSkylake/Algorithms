@@ -1,4 +1,4 @@
-var sample_input = [
+var familyTree = [
 	{
 		name: 'Alice',
 		children: [
@@ -30,17 +30,14 @@ var sample_input = [
 
 // This algorithm was inspired by the preorder binary tree traversal
 
-function pretty_print(sample_input){
-
-	// lvl used to print --
-	var lvl = 0;
+function printTree(familyTree){
 
 	// Helper function to traverse the tree
 	function traversal(member, lvl){
 
 		// print the name
 		if(lvl < 1){
-			console.log(member['name']);
+			console.log(member['name']); // This if statement was add because of ">"
 		} else{
 			console.log("--".repeat(lvl) + "> " + member['name']);
 		}
@@ -50,14 +47,13 @@ function pretty_print(sample_input){
 			traversal(member['children'][j], lvl+1);
 		}
 		
-
 	}
 
 	// First iteration and traversal
-	for(var i=0; i<sample_input.length; i++){
-		traversal(sample_input[i], lvl);
+	for(var i=0; i<familyTree.length; i++){
+		traversal(familyTree[i], 0);
 	}
 
 }
 
-pretty_print(sample_input);
+printTree(familyTree);
