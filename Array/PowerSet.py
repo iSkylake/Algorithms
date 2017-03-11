@@ -1,4 +1,6 @@
-def powerSet(string):
+from nose.tools import assert_equal
+
+def power_set(string):
 	setList = []
 
 	# Helper traverse method
@@ -19,4 +21,11 @@ def powerSet(string):
 	traverse("", 0)
 	return setList
 
-print(powerSet("abc"))
+class Power_Set_Test:
+	def test(self, func):
+		assert_equal(func('ab'), ['', 'b', 'a', 'ab'])
+		assert_equal(func('abc'), ['', 'c', 'b', 'bc', 'a', 'ac', 'ab', 'abc'])
+		print('TESTS PASSED')
+
+t = Power_Set_Test()
+t.test(power_set)
