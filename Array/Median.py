@@ -3,26 +3,16 @@ from nose.tools import assert_equal
 def median(arr1, arr2):
 	i = j = k = 0
 
-	while i < len(arr1) and j < len(arr2) and k < len(arr1) + 1:
+	while k < len(arr1) + 1:
 		if k > 0:
 			before = current
-		if arr1[i] < arr2[j]:
+		if i < len(arr1) and arr1[i] < arr2[j]:
 			current = arr1[i]
 			i += 1
 		else:
 			current = arr2[j]
 			j += 1
 		k += 1;
-
-	while k < len(arr1) + 1:
-		before = current
-		if i < len(arr1):
-			current = arr1[i]
-			i += 1
-		else:
-			current = arr2[j]
-			j += 1
-		k += 1
 
 	return (before + current)/2
 
