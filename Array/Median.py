@@ -30,7 +30,7 @@ class medianTest:
 	def test(self, func):
 		assert_equal(func([1, 12, 15, 26, 38], [2, 13, 17, 30, 45]), 16)
 		assert_equal(func([1, 10, 13, 15], [2, 4, 6, 7]), 6.5)
-		assert_equal(func([1], [5]), 3)
+		assert_equal(func([1, 2], [4, 5]), 3)
 		print("TESTS PASSED")
 
 t = medianTest()
