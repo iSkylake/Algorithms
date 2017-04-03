@@ -5,14 +5,15 @@ function permutation(arr){
 
 	var perms = [];
 
-	for(i=0; i<arr.length; i++){
+	for(var i=0; i<arr.length; i++){
 		var char = arr[i];
-
+		
 		var rem = arr.slice(0,i) + arr.slice(i+1, arr.length);
 
 		for(var p of permutation(rem)){
 			perms.push(char+p);
 		}
+		
 	}
 
 	return perms;
