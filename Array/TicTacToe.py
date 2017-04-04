@@ -1,3 +1,5 @@
+from nose.tools import assert_equal
+
 def tictactoe(board):
 
 	for i in range(3):
@@ -48,4 +50,13 @@ def tictactoe(board):
 	else:
 		return 'X wins'
 
-print(tictactoe(['XOO', 'XOO', 'OOX']))
+class TicTacToe_Test:
+	def test(self, func):
+		assert_equal(func(['XOO', 'XOO', 'OOX']), 'O wins')
+		assert_equal(func(['XXX', 'OXO', 'OOX']), 'X wins')
+		assert_equal(func(['XOO', 'XOX', 'XOO']), 'X wins')
+		assert_equal(func(['OXX', 'XOO', 'OXO']), 'O wins')
+		print('TESTS PASSED')
+
+t = TicTacToe_Test()
+t.test(tictactoe)
