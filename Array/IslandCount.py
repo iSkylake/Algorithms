@@ -1,3 +1,5 @@
+from nose.tools import assert_equal
+
 def island(matrix):
 	island_count = 0
 
@@ -15,4 +17,26 @@ map1 = [
 	[0, 0, 1, 0]
 ]
 
-print(island(map1))
+map2 = [
+	[1, 1, 0, 0],
+	[1, 1, 0, 0],
+	[0, 0, 0, 1],
+	[0, 0, 0, 1]
+]
+
+map3 = [
+	[0, 1, 0, 1],
+	[0, 1, 0, 1],
+	[1, 0, 1, 0],
+	[1, 0, 1, 0]
+]
+
+class Island_Test:
+	def test(self, func):
+		assert_equal(func(map1), 3)
+		assert_equal(func(map2), 2)
+		assert_equal(func(map3), 4)
+		print('TESTS PASSED')
+
+t = Island_Test()
+t.test(island)
