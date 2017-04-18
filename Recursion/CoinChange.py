@@ -1,3 +1,5 @@
+from nose.tools import assert_equal
+
 # def coin_change(change, coins):
 # 	min_coins = change
 # 	if change in coins:
@@ -33,4 +35,13 @@ def coin_change(change, coins):
 
 	return dyn_coin_change(change, coins, memo)
 
-print(coin_change(63, [1, 5, 10, 25]))
+class Coin_Change_Test:
+	def test(self, func):
+		assert_equal(func(63, [1, 5, 10, 25]), 6)
+		assert_equal(func(25, [1, 5, 10]), 3)
+		assert_equal(func(10, [1, 5, 10]), 1)
+		assert_equal(func(20, [1]), 20)
+		print('TESTS PASSED')
+
+t = Coin_Change_Test()
+t.test(coin_change)
