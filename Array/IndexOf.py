@@ -11,12 +11,11 @@ def indexOf(target, string):
 			while string[index] == target[subIndex]:
 				index += 1
 				subIndex += 1
-
-			if subIndex == len(target):
-				return i
+				if subIndex == len(target):
+					return i
 
 	return "-1"
 
 string = "Pirate Warrior so OP, just go face SMORC"
 
-print(indexOf("War", string))
+print(indexOf("RC", string))
