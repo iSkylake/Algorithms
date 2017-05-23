@@ -1,4 +1,4 @@
-let query = 'htttp://www.randomSite.com/?name=hana&time=43627543&favorite=mech,starcraft,stream'
+let query = 'http://www.randomSite.com/?name=hana&time=43627543&favorite=mech,starcraft,stream'
 
 function queryToObj(query){
 	let urlList = query.split("?");
@@ -8,7 +8,7 @@ function queryToObj(query){
 		let item = queryList[i].split("=");
 		obj[item[0]] = item[1]
 	}
-	console.log(obj);
+	return obj;
 }
 
-queryToObj(query);
+console.log(queryToObj(query));
