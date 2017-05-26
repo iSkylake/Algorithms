@@ -5,9 +5,23 @@ let llorch = {
 	}
 };
 
-function myBind(method, obj){
+function myBind(){
+	let method = arguments[0];
+	let obj = arguments[1];
+	let rem = [];
+	if(arguments.length > 2){
+		for(let i=2; i<arguments.length; i++){
+			rem.push(arguments[i]);
+		}
+	};
+
 	return function(){
-		return method.call(obj);
+		if(arguments.length > 0){
+			for(let i=0; i<arguments.length; i++){
+				rem.push(arguments[i]);
+			};
+		};
+		return method.apply(obj, rem);
 	}
 };
 
@@ -16,3 +30,10 @@ let hanaShout = myBind(llorch.shout, {name: "Hana"});
 
 llorchShout();
 hanaShout();
+
+function foobar(a, b){
+	console.log(a+b);
+};
+
+let addFooBar = myBind(foobar, null, 'foo');
+addFooBar('bar');
