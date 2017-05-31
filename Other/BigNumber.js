@@ -9,9 +9,9 @@ BigNumber.prototype.add = function(value){
 	let sum = [];
 	let extra = 0;
 	for(let i=0; i<maxLen; i++){
-		let aSum = a[i] || 0;
-		let bSum = b[i] || 0;
-		let ab = aSum + bSum + extra;
+		a[i] = a[i] || 0;
+		b[i] = b[i] || 0;
+		let ab = a[i] + b[i] + extra;
 		if(ab > 9){
 			extra = 1;
 			ab -= 10;
