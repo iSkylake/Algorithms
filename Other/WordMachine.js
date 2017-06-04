@@ -1,7 +1,9 @@
 function wordMachine(s){
+	// Add operations into an array
 	let op = s.split(" ");
 	let arr = [];
 
+	// Operation list except for add number
 	let opList = {
 		"POP": function(){
 			if(arr.length < 1){
@@ -43,18 +45,24 @@ function wordMachine(s){
 		}
 	};
 
+	// Iterate array of operations
 	for(let i=0; i<op.length; i++){
 		let num = parseInt(op[i]);
+		// Verify if the operation is an number
 		if(isNaN(num)){
+			// If is an number look for the operation in obj
 			let result = opList[op[i]]();
+			// Verify and return error
 			if(result === "-1"){
 				return result;
 			}
 		} else {
+			// Add number to array
 			arr.push(num);
 		}
 	}
 
+	// Return last number
 	return arr.pop();
 }
 
