@@ -7,26 +7,23 @@ function waterFall(arr){
 	}
 	let wall = 0;
 	let current = 0;
-	let direction = "";
 	while(left < right){
 		if(arr[left] < arr[right]){
 			wall = left;
 			current = wall + 1;
-			direction = "left";
 		} else {
 			wall = right;
 			current = wall - 1;
-			direction = "right";
 		}
 		while(arr[current] < arr[wall]){
 			water[current] = arr[wall] - arr[current];
-			if(direction === "left"){
+			if(wall === left){
 				current++;
 			} else {
 				current--;
 			}
 		}		
-		if(direction === "left"){
+		if(wall === left){
 			left = current;
 		} else {
 			right = current;
@@ -38,3 +35,4 @@ function waterFall(arr){
 waterFall([3, 0, 2, 1, 4]);
 waterFall([3, 1, 1, 1, 1]);
 waterFall([3, 0, 5, 1, 4]);
+waterFall([3, 0, 5, 1, 3]);
